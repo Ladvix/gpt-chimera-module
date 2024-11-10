@@ -3,11 +3,11 @@ from pyrogram import Client, filters
 
 def init(app):
 
-    @app.on_message(filters.command('ask', prefixes = '.') & filters.me)
+    @app.on_message(filters.command('ask', prefixes='.') & filters.me)
     def ask_ai(client, message):
 
         # Получаем текст запроса от пользователя
-        user_query = message.text.split(' ', maxsplit = 1)[1]
+        user_query = message.text.split(' ', maxsplit=1)[1]
 
         # Устанавливаем сообщение 'Загрузка...'
         message.edit_text('<b><emoji id="5440621591387980068">🔄</emoji> Загрузка...</b>')
